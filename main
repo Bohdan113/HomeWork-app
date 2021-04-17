@@ -1,0 +1,200 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.grey,
+      appBar: AppBar(
+        actions: [
+          SvgPicture.asset('assets/images/svg/Union (1).svg',),
+          SizedBox(
+            width: 15,
+          ),
+          SvgPicture.asset('assets/images/svg/Union12.svg',),
+          SizedBox(
+            width: 15,
+          )
+          // Icon(),
+        ],
+        leading: Padding(
+          padding: EdgeInsets.all(15.0),
+          child: SvgPicture.asset('assets/images/svg/Union.svg',),
+        ),
+        backgroundColor: Color(0xFFE0E0E0),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.all(8),
+              child: Container(
+                decoration: BoxDecoration(color: Color(0xFFE2E2E2),borderRadius: BorderRadius.circular(15)),
+                height: 45,
+                margin: EdgeInsets.all(10),
+                child: TextField(
+                  decoration: InputDecoration(
+                    labelText: 'пошук',
+                    labelStyle: TextStyle(color: Color(0xFFADADAD)),
+                    hintText: 'Пошук',
+                    fillColor: Colors.blue,
+                    prefixIcon: Padding(
+                      padding: EdgeInsets.all(14.0),
+                      child: SvgPicture.asset('assets/images/svg/Seach_24.svg'),
+                    ),
+                    suffix: IconButton(
+                      icon: Container(
+                          margin: EdgeInsets.symmetric(vertical: 10),
+                          child: Icon(Icons.close)),
+                      onPressed: () {},
+                    ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(15.0),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            bodyColumn(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// ignore: camel_case_types
+class bodyColumn extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        Container(
+          width: 80,
+          height: 550,
+          decoration: BoxDecoration(
+            color: Colors.black,
+            borderRadius: BorderRadius.circular(15),
+            image: DecorationImage(
+              image: AssetImage('assets/images/113.png'),
+              fit: BoxFit.cover,
+            ),
+          ),
+          padding: EdgeInsets.all(8),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              CircleAvatar(
+                radius: 35,
+                backgroundColor: Colors.red,
+              ),
+              CircleAvatar(
+                radius: 35.0,
+                backgroundColor: Colors.black,
+              ),
+            ],
+          ),
+        ),
+        Container(
+          width: 80,
+          height: 550,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            border: Border.all(color: Colors.black, width: 3),
+            color: Color(0xFFFFC8F9),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Container(
+                height: 70,
+                width: 70,
+                color: Colors.orange,
+              ),
+              Container(
+                height: 70,
+                width: 70,
+                color: Colors.lightGreenAccent,
+              ),
+            ],
+          ),
+        ),
+        Container(
+          width: 80,
+          height: 550,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            border: Border.all(color: Colors.black, width: 3),
+            color: Color(0xFFDCFFD8),
+          ),
+          padding: EdgeInsets.symmetric(vertical: 70),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              CircleAvatar(
+                radius: 30,
+                backgroundColor: Colors.grey,
+              ),
+              CircleAvatar(
+                radius: 30,
+                backgroundColor: Color(0xFF2FE54B),
+              )
+            ],
+          ),
+        ),
+        Container(
+          width: 80,
+          height: 550,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            border: Border.all(color: Colors.black, width: 3),
+            color: Color(0xFFF8F5D1),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Container(
+                height: 60,
+                width: 60,
+                color: Colors.lightBlue,
+              ),
+              Container(
+                height: 60,
+                width: 60,
+                color: Color(0xFF2A31DB),
+              ),
+              Container(
+                height: 60,
+                width: 60,
+                color: Colors.purple,
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
